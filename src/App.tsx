@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import List from './screens/List/List';
-import Create from './screens/Create/Create';
-import Read from './screens/Read/Read';
+import Update from './screens/Update/Update';
 
 interface IState {
   overlay: boolean;
@@ -17,10 +16,10 @@ const App = () => {
     <Router>
       <Switch>
         <Route path="/users/create">
-          <Create />
+          <Update />
         </Route>
 
-        <Route path="/user/:name" children={<Read />} />
+        <Route path="/user/:name" children={<Update update={true} />} />
 
         <Route path="/">
           <List />
